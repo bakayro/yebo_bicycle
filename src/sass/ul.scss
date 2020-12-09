@@ -1,0 +1,44 @@
+//=======================================================//
+.ibg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  img {
+    display: none;
+  }
+}
+//=======================================================//
+.slick-slider {
+  position: relative;
+  .slick-track,
+  .slick-list {
+  }
+  .slick-track {
+    display: flex;
+    align-items: flex-start;
+  }
+  .slick-slide {
+  }
+  .slick-dots {
+    padding: 100px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      button {
+        border: 1px solid #c8c8c8;
+        border-radius: 50%;
+        background-color: transparent;
+        width: 11px;
+        height: 11px;
+        position: relative;
+        &::before {
+          content: "•";
+          font-size: 0px;
+        }
+      }
+    }
+    &.slick-active {
+    }
+  }
+}
