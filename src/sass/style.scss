@@ -616,10 +616,8 @@ body {
   }
 }
 
-.footer {
+footer {
   background-color: #f7f7f7;
-  background-color: red;
-  height: 100px;
   &__row {
     display: flex;
     padding: 100px 0;
@@ -645,6 +643,7 @@ body {
     }
   }
 }
+
 /*----- MEDIA max-width: 400px -----*/
 @media (max-width: 400px) {
 }
