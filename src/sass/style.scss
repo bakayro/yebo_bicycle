@@ -1,12 +1,188 @@
+$fontfamily: "Lato" !global;
 @import "mixins.scss"; //my_mixins
 @import "null.scss"; //reset
 @import "ul.scss"; //reset
-$fontfamily: "Lato" !global;
-
+//==============================================//
 //================ header style ================//
-@import "header.scss"; //style for a header
+.header {
+  position: absolute;
+  left: 0;
+  top: 35px;
+  width: 100%;
+  z-index: 50;
+  // header__row
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85px;
+  }
+  // header__menu
+  &__menu {
+  }
+  // header__logo
+  &__logo {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 2;
+    transform: translate(-50%, 0);
+  }
+  @media (max-width: 767px) {
+    top: 15px;
+  }
+}
 
-//================ body style ================//
+.menu {
+  // menu__icon
+  &__icon {
+  }
+  // menu__body
+  &__body {
+  }
+  // menu__list
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: сenter;
+    li {
+      color: #4d4959;
+      position: relative;
+      padding: 0 37.5px;
+      &:nth-child(2) {
+        padding: 0 110px 0 37.5px;
+        &::after {
+          display: none;
+        }
+      }
+      &:nth-child(3) {
+        padding: 0 37.5px 0 110px;
+      }
+      &::after {
+        content: "";
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background-color: #4d4959;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin: -1px 0 0 0;
+      }
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  // menu__link
+  &__link {
+    font-size: 13px;
+    font-family: "Lato";
+    color: #4d4959;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 2.6px;
+    z-index: 168;
+  }
+  /*----- MEDIA max-width: 767px -----*/
+  @media (max-width: 767px) {
+    &__body {
+      position: fixed;
+      width: 0;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #4d4959;
+      padding: 150px 0 20px 0;
+      overflow: auto;
+      transform: translate(0%, 0%);
+      transition: 0.25s ease-in-out;
+      &.active {
+        width: 100%;
+      }
+    }
+    &__list {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      li {
+        padding: 0 0 45px 0;
+        &:nth-child(2),
+        &:nth-child(3) {
+          padding: 0 0 45px 0;
+          &::after {
+            display: block;
+          }
+        }
+        &:last-child {
+          padding: 0;
+        }
+        &::after {
+          width: 4px;
+          height: 4px;
+          background-color: #fff;
+          right: 50%;
+          top: 50px;
+          margin: 0 -2px 0 0;
+        }
+      }
+    }
+    &__link {
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+}
+
+.icon-menu {
+  @media (max-width: 767px) {
+    display: block;
+    position: absolute;
+    top: 33px;
+    right: 15px;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 5;
+    span {
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+      top: 8px;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: green;
+      &:first-child {
+        top: 0;
+      }
+      &:last-child {
+        top: auto;
+        bottom: 0;
+      }
+    }
+    &.active {
+      span {
+        &:first-child {
+          transform: rotate(45deg);
+          top: 8px;
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:last-child {
+          transform: rotate(-45deg);
+          bottom: 8px;
+        }
+      }
+    }
+  }
+}
+//==============================================//
+//================ body style ==================//
 body {
   font-family: $fontfamily;
   font-size: 14px;
@@ -25,8 +201,8 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
-
-//====================== style main image =======================//
+//==============================================//
+//====================== main block ============//
 .ibg {
   background-repeat: no-repeat;
   background-size: cover;
@@ -43,7 +219,7 @@ body {
   opacity: 0;
   visibility: hidden;
 }
-//====================== main block =======================//
+
 .page {
   position: absolute;
   width: 100%;
@@ -66,12 +242,12 @@ body {
   }
 }
 //================ section generation ================//
-.content {
-  position: relative;
-}
-//===================================================//
+// .content {
+//   position: relative;
+// }
+
 .generation {
-  padding: 120px 0;
+  padding: 120px 0;s
   background-color: #f7f7f7;
   //generation__block
   @media (max-width: 940px) {
@@ -81,7 +257,7 @@ body {
     padding: 30px 0;
   }
 }
-//===================================================//
+//==============================================//
 .block {
   text-align: center;
   // block__icon
@@ -127,7 +303,7 @@ body {
     }
   }
 }
-//===================================================//
+//==============================================//
 .brands {
   &_rev {
     .brands__column {
@@ -198,7 +374,7 @@ body {
     }
   }
 }
-//===================================================//
+//==============================================//
 .item {
   height: 100%;
   display: block;
@@ -246,7 +422,7 @@ body {
     padding: 0 0 70% 0;
   }
 }
-//===================================================//
+//==============================================//
 .slider {
   background-color: #f7f7f7;
   padding: 120px 0 60px;
@@ -371,7 +547,7 @@ body {
   }
 }
 
-//======================= scribe =================
+//======================= subscribe =================//
 .subscribe {
   &__body {
     padding: 110px 0;
@@ -439,9 +615,36 @@ body {
     }
   }
 }
-//================ footer style ================//
-@import "footer.scss"; //style for a footer
 
+.footer {
+  background-color: #f7f7f7;
+  background-color: red;
+  height: 100px;
+  &__row {
+    display: flex;
+    padding: 100px 0;
+    align-items: center;
+  }
+  &_column {
+    flex: 0 1 33.333%;
+  }
+  &__adress {
+  }
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__link {
+    }
+  }
+
+  &__dev {
+    &__text {
+    }
+    &__icon {
+    }
+  }
+}
 /*----- MEDIA max-width: 400px -----*/
 @media (max-width: 400px) {
 }

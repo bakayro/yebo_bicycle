@@ -228,7 +228,7 @@ h6 {
       bottom: 8px; } }
 
 body {
-  font-family: "Lato";
+  font-family: "Arial";
   font-size: 14px;
   font-weight: 400; }
 
@@ -276,9 +276,6 @@ body {
     position: absolute;
     left: 0;
     top: 0; }
-
-.content {
-  position: relative; }
 
 .generation {
   padding: 120px 0;
@@ -548,5 +545,20 @@ body {
     padding: 0 0 8px 0; }
   .subscribe__btn {
     width: 100%; } }
+
+.footer {
+  background-color: #f7f7f7;
+  background-color: red;
+  height: 100px; }
+  .footer__row {
+    display: flex;
+    padding: 100px 0;
+    align-items: center; }
+  .footer_column {
+    flex: 0 1 33.333%; }
+  .footer__social {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 /*----- MEDIA max-width: 400px -----*/
