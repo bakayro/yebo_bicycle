@@ -1,0 +1,30 @@
+.footer {
+  z-index: 100;
+  background-color: #f7f7f7; }
+  .footer__row {
+    display: flex;
+    align-items: center; }
+  .footer__column {
+    flex: 0 1 33.333%; }
+  .footer__address {
+    color: #848789;
+    font-size: 14px;
+    line-height: 1.2; }
+    .footer__address p:first-child {
+      font-weight: 700; }
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .social__link {
+    margin: 0 7.5px; }
+
+.dev {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+  .dev__text {
+    font-size: 14px;
+    font-style: italic;
+    color: #848789; }

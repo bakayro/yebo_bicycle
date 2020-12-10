@@ -1,0 +1,50 @@
+//======================= footer ===================//
+.footer {
+  z-index: 100;
+  background-color: #f7f7f7;
+  &__row {
+    display: flex;
+    // padding: 100px 0;
+    align-items: center;
+  }
+  &__column {
+    flex: 0 1 33.333%;
+  }
+  &__address {
+    color: #848789;
+    font-size: 14px;
+    line-height: 1.2;
+    p {
+      &:first-child {
+        font-weight: 700;
+      }
+    }
+  }
+  &__social {
+  }
+  &__dev {
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__link {
+    margin: 0 7.5px;
+  }
+}
+
+.dev {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  &__text {
+    font-size: 14px;
+    font-style: italic;
+    color: #848789;
+  }
+  &__icon {
+  }
+}
+//==================================================//
